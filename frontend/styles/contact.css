@@ -1,0 +1,44 @@
+.contact {
+	overflow: visible;
+}
+
+.contact > .section-title:nth-child(1) {
+	right: 15vw;
+}
+
+.contact-form {
+	width: 50vw;
+	max-width: 90vw;
+	padding: 3%;
+	box-shadow: 0px 0px 10px -5px black;
+	animation: slideUp 1500ms forwards;
+}
+
+.form-element {
+	width: 100%;
+	height: 30px;
+	resize: vertical;
+	border: none;
+	border-bottom: 1px solid var(--colour-five);
+	margin-bottom: 2vh;
+}
+
+.contact-form > button {
+	width: 100%;
+}
+
+.form-element:focus {
+	outline: none;
+}
+
+.submit {
+	border: none;
+	height: 30px;
+	width: 50%;
+}
+
+.submit:hover {
+	background: var(--colour-three);
+	cursor: pointer;
+	border-color: none;
+}

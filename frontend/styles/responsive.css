@@ -1,0 +1,190 @@
+@media screen and (max-width: 2560px) {
+}
+
+@media screen and (max-width: 1440px) {
+	.about-text {
+		font-size: 1.6rem;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.logo {
+		object-fit: cover;
+	}
+
+	.projects {
+		flex-wrap: wrap;
+	}
+
+	.project {
+		flex: 0 50%;
+	}
+
+	.avatar {
+		max-width: 60%;
+	}
+
+	.about {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas: "maleImg" "maleText";
+		text-align: center;
+	}
+
+	.about > .section-title:nth-child(1) {
+		left: 50%;
+	}
+
+	.about-text {
+		margin: 0;
+		padding: 0;
+	}
+
+	.section-title {
+		left: 50%;
+		transform: translateX(-50%);
+		width: 50vw;
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	.nav {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		width: 100%;
+	}
+
+	.projects {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.project {
+		width: 40vh;
+	}
+
+	.header > h2 {
+		display: none;
+	}
+
+	.contact-link {
+		border: none;
+	}
+
+	.contact-link::before {
+		display: none;
+	}
+
+	.nav-link > p {
+		display: none;
+	}
+
+	.nav-link > i {
+		display: flex;
+	}
+
+	.nav-link {
+		padding: 0;
+	}
+
+	.nav-link::after {
+		display: none;
+	}
+
+	.about-text {
+		padding: 5%;
+	}
+
+	.card {
+		max-width: 90vw;
+	}
+
+	.header {
+		bottom: 2vh;
+		left: 50vw;
+		transform: translateX(-50%);
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		width: 75vw;
+		height: 5vh;
+		top: auto;
+		background: var(--colour-two);
+	}
+
+	.footer {
+		grid-template-columns: 1fr 2fr;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	h1,
+	h2 {
+		font-size: 2rem;
+	}
+
+	.about-text {
+		font-size: 1rem;
+	}
+
+	.section-title {
+		text-align: center;
+	}
+
+	.section-title > p {
+		font-size: 0.7rem;
+	}
+
+	.card {
+		max-width: 75%;
+		max-height: 75%;
+	}
+
+	.home {
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr;
+		grid-template-areas: "logo" "words";
+	}
+
+	.home-text-div {
+		text-align: center;
+	}
+
+	.home-text-div > div {
+		justify-content: center;
+	}
+
+	.home-text {
+		padding: 0;
+	}
+
+	.footer {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.skills {
+		flex-direction: column;
+	}
+
+	.list {
+		margin-bottom: 1%;
+	}
+
+	.project {
+		width: 75vw;
+	}
+
+	.project-img {
+		width: 120%;
+	}
+
+	.contact-form {
+		width: 90vw;
+	}
+
+	.contact > h2 {
+		text-align: center;
+	}
+}

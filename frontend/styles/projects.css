@@ -1,0 +1,69 @@
+.projects {
+	position: relative;
+	overflow: visible;
+	align-items: baseline;
+}
+
+.projects > .section-title:nth-child(1) {
+	right: 15vw;
+}
+
+.project {
+	position: relative;
+	width: 30vh;
+	overflow: hidden;
+	margin: 5%;
+	animation: grow 1000ms forwards;
+	overflow: visible;
+	box-shadow: 1px 1px 3px black;
+	padding: 1%;
+	animation: grow 1000ms forwards;
+}
+
+.project-text {
+	width: 100%;
+	text-align: center;
+}
+
+.project-text > h2,
+.project-text > h3 {
+	color: var(--colour-three);
+}
+
+.project-text > h2,
+.project-text > p {
+	margin-bottom: 3%;
+	text-align: center;
+}
+
+.project-img {
+	width: 150%;
+	z-index: 5;
+	overflow: visible;
+	position: relative;
+}
+
+.project-img:hover .overlay {
+	opacity: 0.8;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: opacity .3s ease;
+	background: var(--colour-three);
+	z-index: 7;
+}
+
+.overlay > a {
+	font-size: 4rem;
+	margin: 0 10%;
+	color: var(--colour-one);
+}
+
+.overlay > a:hover {
+	color: var(--colour-five);
+}
