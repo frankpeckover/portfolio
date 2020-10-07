@@ -195,6 +195,7 @@ button:focus {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
+	column-gap: 5%;
 	grid-template-areas: "words logo";
 }
 

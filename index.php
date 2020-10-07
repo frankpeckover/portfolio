@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="frontend/styles/contact.css">
         <link rel="stylesheet" href="frontend/styles/responsive.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="frontend/images/female-avatar.png">
+        <link rel="shortcut icon" href="frontend/images/avatar.png">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <script src="frontend/js/main.js"></script>
     </head>
@@ -35,14 +35,14 @@
         <div id="home" class="home window">
             <div style="grid-area: words;" class="home-text-div">
                 <h2 style="animation: slideFromLeft 1500ms forwards;">Francis Peckover</h2>
-                <p class="home-text" style="opacity: 0; animation: fadeIn 2000ms forwards 500ms;">I am a self-taught programmer and web-developer. </p>
-                <div class="justify-end">
+                <p class="home-text" style="opacity: 0; animation: fadeIn 2000ms forwards 500ms;">I am a full stack web-developer, up to the challenge and ready building anything</p>
+                <div>
                     <button onclick="document.getElementById('contact').scrollIntoView();"  class="call-to-action rounded-border">Contact</button>
                     <button onclick="document.getElementById('projects').scrollIntoView();" class="call-to-action call-to-action-main rounded-border">Projects</button>
                 </div>
             </div>
             <div class="logo-div center" style="grid-area: logo;">
-                <img class="logo" src="frontend/images/female-avatar.png" alt="logo">
+                <img class="logo" src="frontend/images/avatar.png" alt="logo">
             </div>
         </div>
         <!-- #endregion -->
@@ -131,7 +131,7 @@
             <div class="section-title center">
                 <h1 class="center">About</h1>
             </div>
-            <img id='boyImg' class="animated avatar" style="grid-area: maleImg;" src="frontend/images/female-avatar.png" alt="boy">
+            <img id='boyImg' class="animated avatar" style="grid-area: maleImg;" src="frontend/images/avatar.png" alt="boy">
             <p class="animated center about-text fill rounded-border" style="grid-area: maleText;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex obcaecati laborum soluta quia magni 
                 esse, quasi inventore, vitae quo aspernatur provident unde porro. Ab consectetur fugiat, perferendis laudantium vel molestiae aliquam 
                 praesentium quod earum veritatis illum dignissimos suscipit dolore enim tenetur illo exercitationem obcaecati expedita eligendi accusamus 
@@ -145,7 +145,7 @@
             <div class="section-title center">
                 <h1 class="center">Contact</h1>
             </div>
-            <h2 class="animated" style="animation: grow 500ms forwards; margin-bottom: 5%;">Let me know what you're thinking</h2>
+            <h2 class="animated" style="animation: grow 500ms forwards; margin-bottom: 5%; text-align: center">Let me know what you're thinking</h2>
             <form class="animated contact-form column" action="../backend/contact.php" method="post">
                 <input class="form-element" type="text" name="name" placeholder="Name" required>
                 <input class="form-element" type="email" name="email" placeholder="Email" required>
@@ -169,7 +169,7 @@
                 <a href="https://github.com/frankpeckover" target="_blank"><i class="fa fa-github"></i></a>
                 <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
             </div>
-            <p class="center" style="grid-area: copyright;"><i class="center fa fa-copyright"></i> Website by Amalgam 2020. All rights reserved</p>
+            <p class="center" style="grid-area: copyright;"><i class="center fa fa-copyright"></i> Website by Francis Peckover 2020. All rights reserved</p>
         </div>
         <!-- #endregion -->
 
