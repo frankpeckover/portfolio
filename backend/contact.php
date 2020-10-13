@@ -7,9 +7,8 @@
         $message = $_POST['description'];
 
         $mailTo = "francis6797@outlook.com";
-        $header = "From: ".$emailFrom;
+        $headers = 'From:' . $emailFrom;
 
-        mail($mailTo, $subject, $message, $header);
-        header("Location: index.php?mailsend");
+        mail($mailTo, $subject, $message, $headers);
     }
 ?>
