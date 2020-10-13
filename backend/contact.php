@@ -1,6 +1,6 @@
 <?php 
 
-    require('/sendgrid-php/senddgrid-php.php');
+    require('./sendgrid-php/senddgrid-php.php');
 
     $request_body = json_decode('{
         "personalizations": [
