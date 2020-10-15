@@ -59,7 +59,7 @@
                     <p>A simple score sheet for the dice game, Yahtzee</p>
                 </div>
                 <div class="project-img">
-                    <img style="border: 1px solid black" class="fill rounded-border" src="frontend/images/yahtzee.png" alt="Image of the project">
+                    <img style="border: 1px solid black; width: 100%" class="rounded-border" src="frontend/images/yahtzee.png" alt="Image of the project">
                     <div class="overlay rounded-border center">
                         <a class="center" href="https://yahtzeescoresheet.herokuapp.com/" target="_blank"><i class="fa fa-link"></i></a>
                         <a class="center" href="https://github.com/frankpeckover/Yahtzee" target="_blank"><i class="fa fa-github"></i></a>
@@ -83,7 +83,7 @@
                     <p>A blog site for an upcoming adventure company</p>
                 </div>
                 <div class="project-img">
-                    <img style="border: 1px solid black" class="fill rounded-border" src="frontend/images/overlandoffshore.png" alt="Image of the project">
+                    <img style="border: 1px solid black; width: 100%" class="rounded-border" src="frontend/images/overlandoffshore.png" alt="Image of the project">
                     <div class="overlay rounded-border center">
                         <a class="center" href="https://overlandoffshore.herokuapp.com/" target="_blank"><i class="fa fa-link"></i></a>
                         <a class="center" href="https://github.com/frankpeckover/OverlandOffshore" target="_blank"><i class="fa fa-github"></i></a>
@@ -106,7 +106,7 @@
                     <p>A basic visualisation of common searching and sorting algorithms</p>
                 </div>
                 <div class="project-img">
-                    <img style="border: 1px solid black" class="fill rounded-border" src="frontend/images/sorting.gif" alt="Image of the project">
+                    <img style="border: 1px solid black; width:100%" class="rounded-border" src="frontend/images/sorting.gif" alt="Image of the project">
                     <div class="overlay rounded-border center">
                         <a class="center" href="https://sortingandsearching.herokuapp.com/" target="_blank"><i class="fa fa-link"></i></a>
                         <a class="center" href="https://github.com/frankpeckover/Sorting" target="_blank"><i class="fa fa-github"></i></a>
