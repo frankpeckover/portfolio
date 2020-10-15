@@ -1,72 +1,3 @@
-<?php 
-    require 'vendor/autoload.php';
-
-    function send_email ($to, $subject, $body, $message)
-    {
-        $from = "<donotreply@" . $_SERVER['SERVER_NAME'] . ">";
-        $sendgrid = new SendGrid($_ENV["SENDGRID_USERNAME"], $_ENV["SENDGRID_PASSWORD"]);
-        $email = new SendGrid\Email();
-
-        $email
-            ->addTo("$to")
-            ->setFrom("$from")
-            ->setSubject("Contact Form Submission")
-            ->setText("$body")
-        ;
-
-        try {
-            $sendgrid->send($email);
-            return "<p>" . $message . "</p>";
-        } catch(\SendGrid\Exception $e) {
-            $error = "$e->getCode()";
-            foreach($e->getErrors() as $er) {
-                $error .= "$er";
-            }
-            return "<p>" . $error . "</p>";
-        }
-    }
-
-    function is_valid_email($value)
-    {
-        $pattern = "/^([a-zA-Z0-9])+([\.a-zA-Z0-9_-])*";
-        $pattern .= "@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-]+)+/";
-        if(preg_match($pattern, $value))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    function isEmpty($value)
-    {
-        if (!is_array($value) and trim($value) == "")
-        {
-            return true;
-        }
-        elseif (is_array($value) and empty($value))
-        {
-            return true;
-        }
-        elseif (is_array($value))
-        {
-            foreach ($value as $item)
-            {
-                if ($item == "")
-                {
-                    return true;
-                }
-            }
-        }
-        else
-        {
-            return false;
-        }
-    }
-?>
-
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -214,11 +145,11 @@
                 <h1 class="center">Contact</h1>
             </div>
             <h2 class="animated" style="animation: grow 500ms forwards; margin-bottom: 5%; text-align: center">Let me know what you're thinking</h2>
-            <form class="animated contact-form column" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+            <form class="animated contact-form column" action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
                 <input class="form-element" type="text" name="name" placeholder="Name" required>
                 <input class="form-element" type="email" name="email" placeholder="Email" required>
                 <input class="form-element" type="text" name="subject" placeholder="Subject">
-                <textarea style="height: 120px;" class="form-element" name="description" id="description" cols="30" rows="10" placeholder="Let me know what you're thinking" required></textarea>
+                <textarea style="height: 120px;" class="form-element" name="body" id="body" cols="30" rows="10" placeholder="Let me know what you're thinking" required></textarea>
                 <button class="submit" type="submit" name="submit">Submit</button>
             </form>
         </div>
@@ -240,6 +171,38 @@
             <p class="center" style="grid-area: copyright;"><i class="center fa fa-copyright"></i> Website by Francis Peckover 2020. All rights reserved</p>
         </div>
         <!-- #endregion -->
+
+    <?php 
+        require 'vendor/autoload.php';
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $name = $_POST['name'];
+            $from = $_POST['email'];
+            $to = "francis6797@outlook.com";
+            $body = $_POST['body'];
+            $subject = $_POST['subject'];
+            $sendgrid = new SendGrid($_ENV["SENDGRID_USERNAME"], $_ENV["SENDGRID_PASSWORD"]);
+            $email = new SendGrid\Email();
+
+            $email
+                ->addTo("$to")
+                ->setFrom("$from")
+                ->setSubject("$subject . 'from: ' . $name")
+                ->setText("$body")
+            ;
+
+            try {
+                $sendgrid->send($email);
+                return "<p>" . $message . "</p>";
+            } catch(\SendGrid\Exception $e) {
+                $error = "$e->getCode()";
+                foreach($e->getErrors() as $er) {
+                    $error .= "$er";
+                }
+                return "<p>" . $error . "</p>";
+            }
+        }
+    ?>
 
     </body>
 </html>
