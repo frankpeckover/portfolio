@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+<?php 
+    require('sendgrid-php/senddgrid-php.php');
+
+    $from = new From($_POST['email']);
+    $subject = $_POST['subject'];
+    $to = new To("francis6797@outlook.com");
+    $content = new Content("text/plain", $_POST['description']);
+    $mail = new Mail($from, $to, $subject, $content);
+
+    $personalization = new Personalization();
+    $personalization->addTo(new To("francis6797@outlook.com"));
+    $mail->addPersonalization($personalization);
+      
+    $apiKey = getenv('SENDGRID_API_KEY');
+    $sg = new \SendGrid($apiKey);
+
+    $response = $sg->client->mail()->send()->post($request_body);
+    echo $response->statusCode();
+    echo $response->body();
+    echo $response->headers();
+?>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -146,7 +167,7 @@
                 <h1 class="center">Contact</h1>
             </div>
             <h2 class="animated" style="animation: grow 500ms forwards; margin-bottom: 5%; text-align: center">Let me know what you're thinking</h2>
-            <form class="animated contact-form column" action="../backend/contact.php" method="post">
+            <form class="animated contact-form column" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <input class="form-element" type="text" name="name" placeholder="Name" required>
                 <input class="form-element" type="email" name="email" placeholder="Email" required>
                 <input class="form-element" type="text" name="subject" placeholder="Subject">
