@@ -1,23 +1,19 @@
 <?php 
-    require('sendgrid-php/senddgrid-php.php');
+    require 'vendor/autoload.php';
 
-    $from = new From($_POST['email']);
-    $subject = $_POST['subject'];
-    $to = new To("francis6797@outlook.com");
-    $content = new Content("text/plain", $_POST['description']);
-    $mail = new Mail($from, $to, $subject, $content);
+    $from = new SendGrid\Email(null, "test@example.com");
+    $subject = "Hello World from the SendGrid PHP Library!";
+    $to = new SendGrid\Email(null, "test@example.com");
+    $content = new SendGrid\Content("text/plain", "Hello, Email!");
+    $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-    $personalization = new Personalization();
-    $personalization->addTo(new To("francis6797@outlook.com"));
-    $mail->addPersonalization($personalization);
-      
     $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
 
-    $response = $sg->client->mail()->send()->post($request_body);
+    $response = $sg->client->mail()->send()->post($mail);
     echo $response->statusCode();
-    echo $response->body();
     echo $response->headers();
+    echo $response->body();
 ?>
 
 <html lang="en">
