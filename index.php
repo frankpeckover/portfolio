@@ -7,19 +7,19 @@
         {
         "to": [
             {
-            "email": "test@example.com"
+            "email": "francis6797@outlook.com"
             }
         ],
-        "subject": "Hello World from the SendGrid PHP Library!"
+        "subject": ' . $_POST['subject'] . '
         }
     ],
     "from": {
-        "email": "test@example.com"
+        "email": ' . $_POST['email'] . '
     },
     "content": [
         {
         "type": "text/plain",
-        "value": "Hello, Email!"
+        "value": ' . $_POST['description'] . '
         }
     ]
     }');
