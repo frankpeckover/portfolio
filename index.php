@@ -1,36 +1,70 @@
 <?php 
-    // If you are using Composer
     require 'vendor/autoload.php';
 
-    $request_body = json_decode('{
-    "personalizations": [
-        {
-        "to": [
-            {
-            "email": "francis6797@outlook.com"
+    function send_email ($to, $subject, $body, $message)
+    {
+        $from = "<donotreply@" . $_SERVER['SERVER_NAME'] . ">";
+        $sendgrid = new SendGrid($_ENV["SENDGRID_USERNAME"], $_ENV["SENDGRID_PASSWORD"]);
+        $email = new SendGrid\Email();
+
+        $email
+            ->addTo("$to")
+            ->setFrom("$from")
+            ->setSubject("Contact Form Submission")
+            ->setText("$body")
+        ;
+
+        try {
+            $sendgrid->send($email);
+            return "<p>" . $message . "</p>";
+        } catch(\SendGrid\Exception $e) {
+            $error = "$e->getCode()";
+            foreach($e->getErrors() as $er) {
+                $error .= "$er";
             }
-        ],
-        "subject": ' . $_POST['subject'] . '
+            return "<p>" . $error . "</p>";
         }
-    ],
-    "from": {
-        "email": ' . $_POST['email'] . '
-    },
-    "content": [
+    }
+
+    function is_valid_email($value)
+    {
+        $pattern = "/^([a-zA-Z0-9])+([\.a-zA-Z0-9_-])*";
+        $pattern .= "@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-]+)+/";
+        if(preg_match($pattern, $value))
         {
-        "type": "text/plain",
-        "value": ' . $_POST['description'] . '
+            return true;
         }
-    ]
-    }');
+        else
+        {
+            return false;
+        }
+    }
 
-    $apiKey = getenv('SENDGRID_API_KEY');
-    $sg = new \SendGrid($apiKey);
-
-    $response = $sg->client->mail()->send()->post($request_body);
-    echo $response->statusCode();
-    echo $response->body();
-    echo $response->headers();
+    function isEmpty($value)
+    {
+        if (!is_array($value) and trim($value) == "")
+        {
+            return true;
+        }
+        elseif (is_array($value) and empty($value))
+        {
+            return true;
+        }
+        elseif (is_array($value))
+        {
+            foreach ($value as $item)
+            {
+                if ($item == "")
+                {
+                    return true;
+                }
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 ?>
 
 <html lang="en">
