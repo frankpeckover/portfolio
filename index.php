@@ -131,10 +131,7 @@
                 <h1 class="center">About</h1>
             </div>
             <img id='boyImg' class="animated avatar" style="grid-area: maleImg;" src="frontend/images/avatar.png" alt="boy">
-            <p class="animated center about-text fill rounded-border" style="grid-area: maleText;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex obcaecati laborum soluta quia magni 
-                esse, quasi inventore, vitae quo aspernatur provident unde porro. Ab consectetur fugiat, perferendis laudantium vel molestiae aliquam 
-                praesentium quod earum veritatis illum dignissimos suscipit dolore enim tenetur illo exercitationem obcaecati expedita eligendi accusamus 
-                architecto necessitatibus! Perferendis.
+            <p class="animated center about-text fill rounded-border" style="grid-area: maleText;">I am currently a university student studying a Bachelor of Information Technology with an eager attitude towards learning anything software. I have undertaken a few personal projects in order to expand and refine my skills which can be found in the section above. Feel free to drop me a message and let me know what you're thinking :)
             </p>
         </div>
         <!--#endregion-->
