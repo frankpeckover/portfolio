@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Planets", 
+        "description": "A simple gravitation simulation animation",
+        "image": "frontend/images/planets.gif",
+        "link": "google.com",
+        "github": "github.com"
+    },
+
+    {
+        "title": "Sorting and Pathfinding", 
+        "description": "Visualtion of sorting and pathfinding algorithms",
+        "image": "frontend/images/sorting.gif",
+        "link": "google.com",
+        "github": "github.com"
+    },
+
+    {
+        "title": "Yahtzee", 
+        "description": "A simple gravitation simulation animation",
+        "image": "frontend/images/yahtzee.png",
+        "link": "google.com",
+        "github": "github.com"
+    }
+
+]

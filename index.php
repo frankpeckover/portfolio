@@ -51,77 +51,21 @@
             <div class="section-title center">
                 <h1 class="center">Projects</h1>
             </div>
-            
-            <div class="animated project rounded-border column">
-                <div class="project-text column rounded-border">
-                    <h2>Yahtzee</h2>
-                    <h3>Description</h3>
-                    <p>A simple score sheet for the dice game, Yahtzee</p>
-                </div>
-                <div class="project-img">
-                    <img style="border: 1px solid black; width: 100%" class="rounded-border" src="frontend/images/yahtzee.png" alt="Image of the project">
-                    <div class="overlay rounded-border center">
-                        <a class="center" href="https://yahtzeescoresheet.herokuapp.com/" target="_blank"><i class="fa fa-link"></i></a>
-                        <a class="center" href="https://github.com/frankpeckover/Yahtzee" target="_blank"><i class="fa fa-github"></i></a>
-                    </div>
-                </div>
-                <div class="project-text rounded-border column">
-                    <h3>Technologies</h3>
-                    <ul>
-                        <li>React</li>
-                        <li>Node</li>
-                        <li>Express</li>
-                        <li>MongoDB</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="animated project rounded-border column">
-                <div class="project-text column rounded-border">
-                    <h2>Overland Offshore</h2>
-                    <h3>Description</h3>
-                    <p>A blog site for an upcoming adventure company</p>
-                </div>
-                <div class="project-img">
-                    <img style="border: 1px solid black; width: 100%" class="rounded-border" src="frontend/images/overlandoffshore.png" alt="Image of the project">
-                    <div class="overlay rounded-border center">
-                        <a class="center" href="https://overlandoffshore.herokuapp.com/" target="_blank"><i class="fa fa-link"></i></a>
-                        <a class="center" href="https://github.com/frankpeckover/OverlandOffshore" target="_blank"><i class="fa fa-github"></i></a>
-                    </div>
-                </div>
-                <div class="project-text rounded-border column">
-                    <h3>Technologies</h3>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Illustrator</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="animated project rounded-border column">
-                <div class="project-text column rounded-border">
-                    <h2>Sorting and Searching</h2>
-                    <h3>Description</h3>
-                    <p>A basic visualisation of common searching and sorting algorithms</p>
-                </div>
-                <div class="project-img">
-                    <img style="border: 1px solid black; width:100%" class="rounded-border" src="frontend/images/sorting.gif" alt="Image of the project">
-                    <div class="overlay rounded-border center">
-                        <a class="center" href="https://sortingandsearching.herokuapp.com/" target="_blank"><i class="fa fa-link"></i></a>
-                        <a class="center" href="https://github.com/frankpeckover/Sorting" target="_blank"><i class="fa fa-github"></i></a>
-                    </div>
-                </div>
-                <div class="project-text rounded-border column">
-                    <h3>Technologies</h3>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Algorithms</li>
-                    </ul>
-                </div>
-            </div>
+
+            <?php
+                $json = file_get_contents("frontend/js/projects.json");
+                $projects = json_decode($json, true);
+                foreach($projects as $project) {
+                    echo "<div class='project animated'>
+                        <img class='project-img' src={$project["image"]} alt='Image of the '>
+                        <div class='overlay center'>
+                            <a class='center' href='https://yahtzeescoresheet.herokuapp.com/' target='_blank'><i class='fa fa-link'></i></a>
+                            <a class='center' href='https://github.com/frankpeckover/Yahtzee' target='_blank'><i class='fa fa-github'></i></a>
+                        </div>
+                        <div class='center'>{$project["title"]}</div>
+                    </div>";
+                };
+            ?>            
         </div>
         <!-- #endregion -->
 
@@ -131,7 +75,11 @@
                 <h1 class="center">About</h1>
             </div>
             <img id='boyImg' class="animated avatar" style="grid-area: maleImg;" src="frontend/images/avatar.png" alt="boy">
-            <p class="animated center about-text fill rounded-border" style="grid-area: maleText;">I am currently a university student studying a Bachelor of Information Technology with an eager attitude towards learning anything software. I have undertaken a few personal projects in order to expand and refine my skills which can be found in the section above. Feel free to drop me a message and let me know what you're thinking :)
+            <p class="animated center about-text fill rounded-border" style="grid-area: maleText;">
+                I am currently a university student studying a Bachelor of Information Technology with an 
+                eager attitude towards learning anything IT. I have undertaken a few personal 
+                projects in order to expand and refine my skills which can be found in the section 
+                above. Feel free to drop me a message and let me know what you're thinking :)
             </p>
         </div>
         <!--#endregion-->
@@ -142,7 +90,7 @@
                 <h1 class="center">Contact</h1>
             </div>
             <h2 class="animated" style="animation: grow 500ms forwards; margin-bottom: 5%; text-align: center">Let me know what you're thinking</h2>
-            <form class="animated contact-form column" action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
+            <form class="animated contact-form column" action="helper.php" method="post">
                 <input class="form-element" type="text" name="name" placeholder="Name" required>
                 <input class="form-element" type="email" name="email" placeholder="Email" required>
                 <input class="form-element" type="text" name="subject" placeholder="Subject">
@@ -169,37 +117,7 @@
         </div>
         <!-- #endregion -->
 
-    <?php 
-        require 'vendor/autoload.php';
-
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $name = $_POST['name'];
-            $from = $_POST['email'];
-            $to = "francis6797@outlook.com";
-            $body = $_POST['body'];
-            $subject = $_POST['subject'];
-            $sendgrid = new SendGrid($_ENV["SENDGRID_USERNAME"], $_ENV["SENDGRID_PASSWORD"]);
-            $email = new SendGrid\Email();
-
-            $email
-                ->addTo("$to")
-                ->setFrom("$from")
-                ->setSubject("$subject . 'from: ' . $name")
-                ->setText("$body")
-            ;
-
-            try {
-                $sendgrid->send($email);
-                return "<p>" . $message . "</p>";
-            } catch(\SendGrid\Exception $e) {
-                $error = "$e->getCode()";
-                foreach($e->getErrors() as $er) {
-                    $error .= "$er";
-                }
-                return "<p>" . $error . "</p>";
-            }
-        }
-    ?>
+    
 
     </body>
 </html>
