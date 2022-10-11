@@ -6,7 +6,6 @@
 	row-gap: 1%;
 	grid-template-areas: "maleImg maleText";
 	position: relative;
-	min-height: 25vh;
 }
 
 .about > p:nth-child(3) {

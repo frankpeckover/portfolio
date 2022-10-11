@@ -2,25 +2,37 @@
     {
         "title": "Planets", 
         "description": "A simple gravitation simulation animation",
-        "image": "frontend/images/planets.gif",
-        "link": "google.com",
-        "github": "github.com"
+        "tech": ["Python", "Matlab"],
+        "image": "frontend/images/orbit.png",
+        "link": "",
+        "github": ""
     },
 
     {
         "title": "Sorting and Pathfinding", 
-        "description": "Visualtion of sorting and pathfinding algorithms",
-        "image": "frontend/images/sorting.gif",
-        "link": "google.com",
-        "github": "github.com"
+        "description": "Visualisation of sorting and pathfinding algorithms",
+        "tech": ["HTML", "CSS", "Algorithms"],
+        "image": "frontend/images/sorting.png",
+        "link": "",
+        "github": ""
     },
 
     {
         "title": "Yahtzee", 
-        "description": "A simple gravitation simulation animation",
+        "description": "An interactive, online yahtzee score sheet",
+        "tech": ["React", "MongoDB", "Node.js"],
         "image": "frontend/images/yahtzee.png",
-        "link": "google.com",
-        "github": "github.com"
+        "link": "",
+        "github": ""
+    },
+
+    {
+        "title": "Home servers", 
+        "description": "Learning to implement hardware solutions for hosting",
+        "tech": ["Raspberry Pi", "Ubuntu Server", "Networking"],
+        "image": "frontend/images/server.png",
+        "link": "",
+        "github": ""
     }
 
 ]

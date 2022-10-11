@@ -5,19 +5,15 @@
 	.about-text {
 		font-size: 1.6rem;
 	}
+
+	.projects {
+		grid-template-columns: auto auto;
+	}
 }
 
 @media screen and (max-width: 1024px) {
 	.logo {
 		object-fit: cover;
-	}
-
-	.projects {
-		flex-wrap: wrap;
-	}
-
-	.project {
-		flex: 0 50%;
 	}
 
 	.avatar {
@@ -79,12 +75,7 @@
 	}
 
 	.projects {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.project {
-		width: 40vh;
+		grid-template-columns: auto;
 	}
 
 	.header > h2 {
@@ -117,10 +108,6 @@
 
 	.about-text {
 		padding: 5%;
-	}
-
-	.card {
-		max-width: 90vw;
 	}
 
 	.header {
@@ -160,11 +147,6 @@
 		font-size: 0.7rem;
 	}
 
-	.card {
-		max-width: 75%;
-		max-height: 75%;
-	}
-
 	.home-text-div {
 		text-align: center;
 	}
@@ -189,11 +171,7 @@
 		margin-bottom: 1%;
 	}
 
-	.project {
-		width: 75vw;
-	}
-
-	.project-img {
-		width: 120%;
+	.projects {
+		grid-template-columns: (1, auto);
 	}
 }

@@ -56,13 +56,27 @@
                 $json = file_get_contents("frontend/js/projects.json");
                 $projects = json_decode($json, true);
                 foreach($projects as $project) {
-                    echo "<div class='project animated'>
-                        <img class='project-img' src={$project["image"]} alt='Image of the '>
-                        <div class='overlay center'>
-                            <a class='center' href='https://yahtzeescoresheet.herokuapp.com/' target='_blank'><i class='fa fa-link'></i></a>
-                            <a class='center' href='https://github.com/frankpeckover/Yahtzee' target='_blank'><i class='fa fa-github'></i></a>
+                    echo
+                    "<div class='card animated'>
+                        <div class='content'>
+                            <div class='card-front'>
+                                <img class='card-img' src={$project["image"]} alt=''>
+                            </div>
+                            <div class='card-back'>
+                                <h3>{$project["title"]}</h3>
+                                <p>{$project["description"]}</p>
+                                <div>";
+                                foreach($project['tech'] as $tech) {
+                                    echo "<p>$tech</p>";
+                                };
+                                echo 
+                                "</div>
+                                <div class='links'>
+                                    <a href={$project['link']} target='_blank'><i class='fa fa-link'></i></a>
+                                    <a href={$project['github']} target='_blank'><i class='fa fa-github'></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class='center'>{$project["title"]}</div>
                     </div>";
                 };
             ?>            

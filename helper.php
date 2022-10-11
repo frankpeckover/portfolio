@@ -5,6 +5,9 @@
     $body = $_POST['body'];
     $subject = $_POST['subject'];
 
-    mail($to, $subject, $body);
+    $success = mail($to, $subject, $body);
+    if (!$success) {
+        print_r(error_get_last()['message']);
+     }
     echo "BEaN MAILED to $to from $from";
 ?>

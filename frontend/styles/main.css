@@ -185,7 +185,6 @@ button:focus {
 }
 
 .window {
-	min-height: 95vh;
 	width: 100vw;
 	padding: 10vh 5%;
 	margin-bottom: 5%;
@@ -197,6 +196,7 @@ button:focus {
 	grid-template-rows: 1fr;
 	column-gap: 5%;
 	grid-template-areas: "words logo";
+	min-height: 100vh;
 }
 
 .home-text-div {
