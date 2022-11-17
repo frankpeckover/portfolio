@@ -22,7 +22,7 @@
         "description": "Visualisation of sorting and pathfinding algorithms",
         "tech": ["HTML", "CSS", "Algorithms"],
         "image": "frontend/images/sorting.png",
-        "link": "",
+        "link": "http://francispeckover.ddns.net:83",
         "github": "https://github.com/frankpeckover/algorythm"
     },
 
@@ -31,7 +31,7 @@
         "description": "An interactive, online yahtzee score sheet",
         "tech": ["React", "MongoDB", "Node.js"],
         "image": "frontend/images/yahtzee.png",
-        "link": "",
+        "link": "http://francispeckover.ddns.net:82",
         "github": "https://github.com/frankpeckover/yahtzee"
     },
 
