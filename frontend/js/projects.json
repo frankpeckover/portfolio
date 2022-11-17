@@ -1,11 +1,20 @@
 [
     {
+        "title": "NeuralNetwork", 
+        "description": "A neural network built with python",
+        "tech": ["Neural networks", "Python"],
+        "image": "frontend/images/neuralNetwork.png",
+        "link": "",
+        "github": "https://github.com/frankpeckover/neuralNetwork"
+    },
+
+    {
         "title": "Planets", 
         "description": "A simple gravitation simulation animation",
         "tech": ["Python", "Matlab"],
         "image": "frontend/images/orbit.png",
         "link": "",
-        "github": ""
+        "github": "https://github.com/frankpeckover/planets"
     },
 
     {
@@ -14,7 +23,7 @@
         "tech": ["HTML", "CSS", "Algorithms"],
         "image": "frontend/images/sorting.png",
         "link": "",
-        "github": ""
+        "github": "https://github.com/frankpeckover/algorythm"
     },
 
     {
@@ -23,12 +32,12 @@
         "tech": ["React", "MongoDB", "Node.js"],
         "image": "frontend/images/yahtzee.png",
         "link": "",
-        "github": ""
+        "github": "https://github.com/frankpeckover/yahtzee"
     },
 
     {
         "title": "Home servers", 
-        "description": "Learning to implement hardware solutions for hosting",
+        "description": "Learning to implement hardware solutions for hosting. All of these sites are hosted from home on a raspi 4",
         "tech": ["Raspberry Pi", "Ubuntu Server", "Networking"],
         "image": "frontend/images/server.png",
         "link": "",

@@ -71,9 +71,14 @@
                                 };
                                 echo 
                                 "</div>
-                                <div class='links'>
-                                    <a href={$project['link']} target='_blank'><i class='fa fa-link'></i></a>
-                                    <a href={$project['github']} target='_blank'><i class='fa fa-github'></i></a>
+                                <div class='links'>";    
+                                    if($project['link'] != '') {                         
+                                        echo "<a href={$project['link']} target='_blank'><i class='fa fa-link'></i></a>";
+                                    }
+                                    if($project['github'] != '') {
+                                        echo "<a href={$project['github']} target='_blank'><i class='fa fa-github'></i></a>";
+                                    }
+                                    echo "
                                 </div>
                             </div>
                         </div>
